@@ -17,7 +17,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
 
 
 @NgModule({
@@ -28,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     DialogAddUserComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -40,7 +44,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
